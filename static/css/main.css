@@ -113,6 +113,15 @@ h1,h2,h3,h4,h5,h6 {
   font-family: 'Roboto', Helvetica, sans-serif;
   font-weight: 800;
   color: #111111;
+  margin-bottom: 0px;
+}
+
+h1 {
+  margin-top: 0px;
+}
+
+ul {
+  margin-top: 0px;
 }
 
 .container[role=main] {

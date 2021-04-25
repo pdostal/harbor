@@ -17,7 +17,8 @@
         <div class="{{ .Type }}-heading">
           {{ if eq .Type "list" }}
             <h1>{{ if .Data.Singular }}#{{ end }}{{ .Title }}</h1>
-            {{ else }}
+          {{ else if eq .Type "page" }}
+          {{ else }}
             <h1>
               {{ with $title }}{{ . }}{{ else }}<br />{{ end }}
             </h1>

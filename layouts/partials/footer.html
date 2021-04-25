@@ -1,26 +1,21 @@
 <footer>
   {{ partial "social.html" . }}
 
-  {{ if .IsTranslated }}
-    <p>
-      {{ range .Translations }}
-        <a href="{{ .Permalink }}" name="{{ .Language.LanguageName }}"
-          >{{ .Language.LanguageName }}</a
-        >
-      {{ end }}
-    </p>
-  {{ end }}
   <div class="container">
     <p class="credits copyright">
-      <a href="{{ "" | absLangURL }}about">{{ .Site.Author.name }}</a>
+      <a href="{{ "" | absLangURL }}bio">{{ .Site.Author.name }}</a>
       &nbsp;&copy;
       {{ .Site.LastChange.Format "2006" }}
       {{ if .Site.Title }}
-        &nbsp;/&nbsp;
-        <a href="{{ "" | absLangURL }}">{{ .Site.Title }}</a>
+      &nbsp;/&nbsp;
+      {{ if .IsTranslated }}
+      {{ range .Translations }}
+      <a href="{{ .Permalink }}" name="{{ .Language.LanguageName }}">{{ .Language.LanguageName }}</a>
       {{ end }}
-      &nbsp;&ndash;&nbsp;
-      <em class="fas fa-moon" id="dark-mode-toggle"></em>
+      {{ end }}
+      {{ end }}
+      &nbsp;
+      <span class="fas fa-moon" id="dark-mode-toggle"></span>
     </p>
 
     <p class="credits theme-by">

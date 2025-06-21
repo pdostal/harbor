@@ -14,6 +14,18 @@
         </div>
       {{ end }}
 
+      {{ if .Params.authors }}
+        <div class="blog-authors">
+          {{ range .Param "authors" }}
+            {{ $name := . }}
+            {{ $path := printf "/%s/%s" "authors" ($name | urlize) }}
+            {{ with $.Site.GetPage $path }}
+              <a href="mailto:{{ .Params.email }}">{{ .Params.name }}</span>
+            {{ end }}
+          {{ end }}
+        </div>
+      {{ end }}
+
       {{ if .Site.Params.enableBottomNavigation }}
         {{ partial "bottomnav.html" . }}
       {{ end }}

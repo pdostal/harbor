@@ -558,17 +558,6 @@ footer em {
 
   .blog-tags {
     margin: 20px 0;
-    float: left;
-  }
-
-  .blog-authors {
-    margin: 20px 0;
-    float: right;;
-  }
-
-  .blog-authors a {
-    display: inline-block;
-    margin-left: 35px;
   }
 
   .pager li a {
